@@ -21,7 +21,7 @@ from sklearn.decomposition import PCA
 from pandas.plotting import scatter_matrix
 
 # loading dataset
-filename = 'D:\#.Secure Work Folder\역량강화_MCS\Database\Excipients_APIs_DB_2023_230217-1.csv'
+filename = 'Excipients_APIs_DB_2023_230217-1.csv'
 
 # creating data frame for pandas
 df = pd.read_csv(filename)
