@@ -53,7 +53,7 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-st.title('MCS Calaulator')  # 타이틀명 지정
+st.title('Manfacturing Classification System (ver 1.0)')  # 타이틀명 지정
 
 API_name = st.selectbox(
     'Select API',
