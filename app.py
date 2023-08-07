@@ -1,12 +1,6 @@
-import streamlit as st
-
-
-# 기본 데이터 분석을 위한 Library
 import pandas as pd
 import numpy as np
 import streamlit as st
-
-# sklearn의 PCA를 통해서 쉽게 PCA 적용가능
 from sklearn.decomposition import PCA
 # loading dataset
 filename = 'Excipients_APIs_DB_2023_230217-1.csv'
