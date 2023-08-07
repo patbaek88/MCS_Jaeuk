@@ -1,3 +1,5 @@
 streamlit
 numpy
 pandas
+sklearn.decomposition
+sklearn.preprocessing
