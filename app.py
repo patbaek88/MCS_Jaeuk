@@ -6,20 +6,8 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-# 시각화 Library
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Sklearn에 있는 기본 데이터셋을 가져오기 위한
-from sklearn import datasets
-
 # sklearn의 PCA를 통해서 쉽게 PCA 적용가능
 from sklearn.decomposition import PCA
-# 그렇지 않으면 Matrix만들고 COV 구해서
-# eigen_vector, eigen_value를 구해야하는 등 과정이 복잡해진다.
-
-from pandas.plotting import scatter_matrix
-
 # loading dataset
 filename = 'Excipients_APIs_DB_2023_230217-1.csv'
 
