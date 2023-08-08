@@ -44,7 +44,7 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-df_pc1_score = pd.Dataframe(data = df['PC1_score'], index=df.index, colums=['PC1_Score']
+#df_pc1_score = pd.Dataframe(data = df['PC1_score'], index=df.index, colums=['PC1_Score']
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
