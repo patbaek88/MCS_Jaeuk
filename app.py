@@ -44,9 +44,12 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-df_pc1_score = pd.Dataframe(data = df['PC1_score'], index=df.index, columns=['PC1_Score']
+df_pc1_score = df["PC1_score"]
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
+
+if st.button("PC1 score view"):
+    st.write(df_pc1_score)
 
 API_name = st.selectbox(
     'Select API',
