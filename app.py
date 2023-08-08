@@ -96,7 +96,7 @@ Excipient_4_content = st.text_input('Excipient_4_content (%)')
 
 
 ## Buttons
-if st.button(“Calulate”):
+if st.button("Calulate"):
  API_content_f = float(API_content)
  Excipient_1_content_f = float(Excipient_1_content)
  Excipient_2_content_f = float(Excipient_2_content)
