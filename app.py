@@ -49,6 +49,10 @@ df_pc1_score = df["PC1_score"]
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
 if st.button("PC1 score view"):
+    st.write("Class 1 : Direct Compression,   MCS score < " + critical_value_class1_1)
+    st.write("Class 2 : Dry Granulation,        MCS score < " + critical_value_class3_1)
+    st.write("Class 3 : Wet Granulation,       MCS score < " + critical_value_class4_1)
+    st.write("Class 4 : Other Technology,   MCS score >= " + critical_value_class4_1)
     st.write(df_pc1_score)
 
 API_name = st.selectbox(
@@ -143,5 +147,3 @@ if st.button("Calulate"):
     st.write("Class 2 : Dry Granulation,        MCS score < " + critical_value_class3_1)
     st.write("Class 3 : Wet Granulation,       MCS score < " + critical_value_class4_1)
     st.write("Class 4 : Other Technology,   MCS score >= " + critical_value_class4_1)
-
-st.write(df_pc1_score)
