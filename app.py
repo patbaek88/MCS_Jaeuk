@@ -1,4 +1,5 @@
 import pandas as pd
+import streamlit as st
 
 from sklearn.decomposition import PCA
 # loading dataset
