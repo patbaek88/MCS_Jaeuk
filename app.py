@@ -1,3 +1,5 @@
+import pandas as pd
+
 from sklearn.decomposition import PCA
 # loading dataset
 filename = 'Excipients_APIs_DB_2023_230217-1.csv'
