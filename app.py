@@ -94,22 +94,25 @@ Excipient_4_name = st.selectbox(
 
 Excipient_4_content = st.text_input('Excipient_4_content (%)')
 
-API_content_f = float(API_content)
-Excipient_1_content_f = float(Excipient_1_content)
-Excipient_2_content_f = float(Excipient_2_content)
-Excipient_3_content_f = float(Excipient_3_content)
-Excipient_4_content_f = float(Excipient_4_content)
 
-API_PC1_score = df.loc[API_name]["PC1_score"]
-Excipient_1_PC1_score = df.loc[Excipient_1_name]["PC1_score"]
-Excipient_2_PC1_score = df.loc[Excipient_2_name]["PC1_score"]
-Excipient_3_PC1_score = df.loc[Excipient_3_name]["PC1_score"]
-Excipient_4_PC1_score = df.loc[Excipient_4_name]["PC1_score"]
-API_PC1_score_1 = str(round(API_PC1_score, 3))
-Excipient_1_PC1_score_1 = str(round(Excipient_1_PC1_score, 3))
-Excipient_2_PC1_score_1 = str(round(Excipient_2_PC1_score, 3))
-Excipient_3_PC1_score_1 = str(round(Excipient_3_PC1_score, 3))
-Excipient_4_PC1_score_1 = str(round(Excipient_4_PC1_score, 3))
+## Buttons
+if st.button(“Calulate”):
+ API_content_f = float(API_content)
+ Excipient_1_content_f = float(Excipient_1_content)
+ Excipient_2_content_f = float(Excipient_2_content)
+ Excipient_3_content_f = float(Excipient_3_content)
+ Excipient_4_content_f = float(Excipient_4_content)
+
+ API_PC1_score = df.loc[API_name]["PC1_score"]
+ Excipient_1_PC1_score = df.loc[Excipient_1_name]["PC1_score"]
+ Excipient_2_PC1_score = df.loc[Excipient_2_name]["PC1_score"]
+ Excipient_3_PC1_score = df.loc[Excipient_3_name]["PC1_score"]
+ Excipient_4_PC1_score = df.loc[Excipient_4_name]["PC1_score"]
+ API_PC1_score_1 = str(round(API_PC1_score, 3))
+ Excipient_1_PC1_score_1 = str(round(Excipient_1_PC1_score, 3))
+ Excipient_2_PC1_score_1 = str(round(Excipient_2_PC1_score, 3))
+ Excipient_3_PC1_score_1 = str(round(Excipient_3_PC1_score, 3))
+ Excipient_4_PC1_score_1 = str(round(Excipient_4_PC1_score, 3))
 
 # Total_amount = API_amount + Excipient1_amount + Excipient2_amount + Excipient3_amount
 
