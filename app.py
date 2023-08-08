@@ -97,53 +97,53 @@ Excipient_4_content = st.text_input('Excipient_4_content (%)')
 
 ## Buttons
 if st.button("Calulate"):
- API_content_f = float(API_content)
- Excipient_1_content_f = float(Excipient_1_content)
- Excipient_2_content_f = float(Excipient_2_content)
- Excipient_3_content_f = float(Excipient_3_content)
- Excipient_4_content_f = float(Excipient_4_content)
+    API_content_f = float(API_content)
+    Excipient_1_content_f = float(Excipient_1_content)
+    Excipient_2_content_f = float(Excipient_2_content)
+    Excipient_3_content_f = float(Excipient_3_content)
+    Excipient_4_content_f = float(Excipient_4_content)
 
- API_PC1_score = df.loc[API_name]["PC1_score"]
- Excipient_1_PC1_score = df.loc[Excipient_1_name]["PC1_score"]
- Excipient_2_PC1_score = df.loc[Excipient_2_name]["PC1_score"]
- Excipient_3_PC1_score = df.loc[Excipient_3_name]["PC1_score"]
- Excipient_4_PC1_score = df.loc[Excipient_4_name]["PC1_score"]
- API_PC1_score_1 = str(round(API_PC1_score, 3))
- Excipient_1_PC1_score_1 = str(round(Excipient_1_PC1_score, 3))
- Excipient_2_PC1_score_1 = str(round(Excipient_2_PC1_score, 3))
- Excipient_3_PC1_score_1 = str(round(Excipient_3_PC1_score, 3))
- Excipient_4_PC1_score_1 = str(round(Excipient_4_PC1_score, 3))
+    API_PC1_score = df.loc[API_name]["PC1_score"]
+    Excipient_1_PC1_score = df.loc[Excipient_1_name]["PC1_score"]
+    Excipient_2_PC1_score = df.loc[Excipient_2_name]["PC1_score"]
+    Excipient_3_PC1_score = df.loc[Excipient_3_name]["PC1_score"]
+    Excipient_4_PC1_score = df.loc[Excipient_4_name]["PC1_score"]
+    API_PC1_score_1 = str(round(API_PC1_score, 3))
+    Excipient_1_PC1_score_1 = str(round(Excipient_1_PC1_score, 3))
+    Excipient_2_PC1_score_1 = str(round(Excipient_2_PC1_score, 3))
+    Excipient_3_PC1_score_1 = str(round(Excipient_3_PC1_score, 3))
+    Excipient_4_PC1_score_1 = str(round(Excipient_4_PC1_score, 3))
 
- # Total_amount = API_amount + Excipient1_amount + Excipient2_amount + Excipient3_amount
+    # Total_amount = API_amount + Excipient1_amount + Excipient2_amount + Excipient3_amount
 
- MCS_score = API_PC1_score * API_content_f / 100 + Excipient_1_PC1_score * Excipient_1_content_f / 100 + Excipient_2_PC1_score * Excipient_2_content_f / 100 + Excipient_3_PC1_score * Excipient_3_content_f / 100 + Excipient_4_PC1_score * Excipient_4_content_f / 100
- MCS_score_1 = str(round(MCS_score, 3))
+    MCS_score = API_PC1_score * API_content_f / 100 + Excipient_1_PC1_score * Excipient_1_content_f / 100 + Excipient_2_PC1_score * Excipient_2_content_f / 100 + Excipient_3_PC1_score * Excipient_3_content_f / 100 + Excipient_4_PC1_score * Excipient_4_content_f / 100
+    MCS_score_1 = str(round(MCS_score, 3))
 
- def func(x):
-     if x < critical_value_class1:
-         return "Class 1"
-     elif x < critical_value_class2:
-         return "Class 1/2"
-     elif x < critical_value_class3:
-         return "Class 2/3"
-     elif x <= critical_value_class4:
-         return "Class 3"
-     else:
-         return "Class 4"
+    def func(x):
+        if x < critical_value_class1:
+            return "Class 1"
+        elif x < critical_value_class2:
+            return "Class 1/2"
+        elif x < critical_value_class3:
+            return "Class 2/3"
+        elif x <= critical_value_class4:
+            return "Class 3"
+        else:
+            return "Class 4"
 
 
- MCS = func(MCS_score)
+    MCS = func(MCS_score)
 
- st.write("Mixture MCS score = " + MCS_score_1)
- st.write("Mixture MCS result = " + MCS)
- st.write("------------------------Calculation detail------------------------")
- st.write("API PC1 score = " + API_PC1_score_1 + " / content = " + API_content + " %")
- st.write("Excipient_1 PC1 score = " + Excipient_1_PC1_score_1 + " / content = " + Excipient_1_content + " %")
- st.write("Excipient_2 PC1 score = " + Excipient_2_PC1_score_1 + " / content = " + Excipient_2_content + " %")
- st.write("Excipient_3 PC1 score = " + Excipient_3_PC1_score_1 + " / content = " + Excipient_3_content + " %")
- st.write("Excipient_4 PC1 score = " + Excipient_4_PC1_score_1 + " / content = " + Excipient_4_content + " %")
- st.write("Mixture MCS score = " + MCS_score_1)
- st.write("Class 1 : Direct Compression,   MCS score < " + critical_value_class1_1)
- st.write("Class 2 : Dry Granulation,        MCS score < " + critical_value_class3_1)
- st.write("Class 3 : Wet Granulation,       MCS score < " + critical_value_class4_1)
- st.write("Class 4 : Other Technology,   MCS score >= " + critical_value_class4_1)
+    st.write("Mixture MCS score = " + MCS_score_1)
+    st.write("Mixture MCS result = " + MCS)
+    st.write("------------------------Calculation detail------------------------")
+    st.write("API PC1 score = " + API_PC1_score_1 + " / content = " + API_content + " %")
+    st.write("Excipient_1 PC1 score = " + Excipient_1_PC1_score_1 + " / content = " + Excipient_1_content + " %")
+    st.write("Excipient_2 PC1 score = " + Excipient_2_PC1_score_1 + " / content = " + Excipient_2_content + " %")
+    st.write("Excipient_3 PC1 score = " + Excipient_3_PC1_score_1 + " / content = " + Excipient_3_content + " %")
+    st.write("Excipient_4 PC1 score = " + Excipient_4_PC1_score_1 + " / content = " + Excipient_4_content + " %")
+    st.write("Mixture MCS score = " + MCS_score_1)
+    st.write("Class 1 : Direct Compression,   MCS score < " + critical_value_class1_1)
+    st.write("Class 2 : Dry Granulation,        MCS score < " + critical_value_class3_1)
+    st.write("Class 3 : Wet Granulation,       MCS score < " + critical_value_class4_1)
+    st.write("Class 4 : Other Technology,   MCS score >= " + critical_value_class4_1)
