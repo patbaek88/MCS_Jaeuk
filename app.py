@@ -1,8 +1,3 @@
-#import pandas as pd
-#import numpy as np
-#import streamlit as st
-
-
 from sklearn.decomposition import PCA
 # loading dataset
 filename = 'Excipients_APIs_DB_2023_230217-1.csv'
@@ -27,14 +22,8 @@ principalComponents = pca.fit_transform(x)
 principalDf = pd.DataFrame(data=principalComponents, index=df.index, columns=['pc1', 'pc2', 'pc3', 'pc4'])
 # 주성분으로 이루어진 데이터 프레임 구성
 
-
 principalDf["Classification"] = df['Classification']
-
 principalDf_WG = principalDf[(principalDf['Classification'] == 'Filler_WG')]
-
-# pc1_API = principalDf[(principalDf['Classification']=='API')]
-# pc1_API_min = pc1_API['pc1'].min()
-# pc1_API_min
 
 critical_value_WG_min = principalDf_WG['pc1'].min()
 critical_value_WG_max = principalDf_WG['pc1'].max()
@@ -53,7 +42,7 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-st.title('Manfacturing Classification System (ver 1.0)')  # 타이틀명 지정
+st.title('Manfacturing Classification System')  # 타이틀명 지정
 
 API_name = st.selectbox(
     'Select API',
