@@ -48,12 +48,11 @@ df_pc1_score = df["PC1_score"]
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-if st.button("PC1 score view"):
-    st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
-    st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
-    st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
-    st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
-    st.write(df_pc1_score)
+st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
+st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
+st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
+st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
+st.write(df_pc1_score)
 
 API_name = st.selectbox(
     'Select API',
@@ -117,7 +116,7 @@ if st.button("Calulate"):
     # Total_amount = API_amount + Excipient1_amount + Excipient2_amount + Excipient3_amount
 
     Mixture_PC1_score = API_PC1_score * API_content_f / 100 + Excipient_1_PC1_score * Excipient_1_content_f / 100 + Excipient_2_PC1_score * Excipient_2_content_f / 100 + Excipient_3_PC1_score * Excipient_3_content_f / 100 + Excipient_4_PC1_score * Excipient_4_content_f / 100
-    Mixture_PC1_score_1 = str(round(MCS_score, 3))
+    Mixture_PC1_score_1 = str(round(Mixture_PC1_score, 3))
 
     def func(x):
         if x < critical_value_class1:
