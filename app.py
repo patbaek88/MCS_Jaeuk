@@ -52,6 +52,7 @@ st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_
 st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
 st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
 st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
+st.write("Data Base Updated in Feb.2023)")
 st.write(df_pc1_score)
 
 API_name = st.selectbox(
