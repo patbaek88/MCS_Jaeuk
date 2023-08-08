@@ -135,7 +135,7 @@ if st.button("Calulate"):
 
     st.write("Mixture PC1 score = " + Mixture_PC1_score_1)
     st.write("Mixture MCS result = " + MCS)
-    st.write("------------------------Calculation detail------------------------")
+    st.write("------------------------Calculation Detail------------------------")
     st.write("API PC1 score = " + API_PC1_score_1 + " / content = " + API_content + " %")
     st.write("Excipient_1 PC1 score = " + Excipient_1_PC1_score_1 + " / content = " + Excipient_1_content + " %")
     st.write("Excipient_2 PC1 score = " + Excipient_2_PC1_score_1 + " / content = " + Excipient_2_content + " %")
