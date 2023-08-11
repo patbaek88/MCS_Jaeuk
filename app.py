@@ -50,8 +50,7 @@ df_pc1_score = df["PC1_score"]
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-with st.sidebar:
-    st.['Data Base', 'Formulation Recommendation', 'Formulation Customization']
+st.sidebar.['Data Base', 'Formulation Recommendation', 'Formulation Customization']
 #option = st.sidebar.selectbox(
 #    'Menu',
 #     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
