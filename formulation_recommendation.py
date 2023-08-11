@@ -4,18 +4,6 @@ from sklearn.decomposition import PCA
 
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-option = st.sidebar.selectbox(
-    'Menu',
-    ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
-
-multi_select = st.multiselect(
-    'Please select features in multi selectbox. Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
-    ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH',
-     '6UYS', '6MPS', '6FF', '6AIF', 'WFA'],
-    default=['SE', 'CBD', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA'])
-
-st.write('You selected:', multi_select)
-
 # loading dataset
 filename = 'Excipients_APIs_DB_Feb2023.csv'
 
@@ -23,8 +11,7 @@ filename = 'Excipients_APIs_DB_Feb2023.csv'
 df = pd.read_csv(filename)
 df = df.set_index('Material')
 
-# df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
-df_filtered = df[multi_select]
+df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
 
 from sklearn.preprocessing import StandardScaler
 
@@ -41,11 +28,6 @@ pca = PCA(n_components=4)  # 주성분을 몇개로 할지 결정
 principalComponents = pca.fit_transform(x)
 principalDf = pd.DataFrame(data=principalComponents, index=df.index, columns=['pc1', 'pc2', 'pc3', 'pc4'])
 # 주성분으로 이루어진 데이터 프레임 구성
-pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_,
-                                            index=['Principal Component 1', 'Principal Component 2',
-                                                   'Principal Component 3', 'Principal Component 4'],
-                                            columns=['Explained Variance Ratio'])
-st.write(pca_explained_variance_ratio)
 
 principalDf["Classification"] = df['Classification']
 principalDf_WG = principalDf[(principalDf['Classification'] == 'Filler_WG')]
@@ -67,13 +49,6 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-df_pc1_score = df["PC1_score"]
-
-st.write(df_pc1_score)
-st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
-st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
-st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
-st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
 
 API_name = st.selectbox(
     'Select API',
