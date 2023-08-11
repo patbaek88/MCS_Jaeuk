@@ -8,9 +8,11 @@ filename = 'Excipients_APIs_DB_2023_230217-1.csv'
 df = pd.read_csv(filename)
 df = df.set_index('Material')
 
+df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+
 from sklearn.preprocessing import StandardScaler
 
-x = df.drop(['Classification', 'Project'], axis=1).values  # 독립변인들의 value값만 추출
+x = df_filtered.values # 독립변인들의 value값만 추출
 y = df['Classification'].values  # 종속변인 추출
 
 x = StandardScaler().fit_transform(x)  # x객체에 x를 표준화한 데이터를 저장
