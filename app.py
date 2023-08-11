@@ -50,6 +50,20 @@ df_pc1_score = df["PC1_score"]
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
+
+with st.sidebar:
+    choice = option_menu("Menu", ["페이지1", "페이지2", "페이지3"],
+                         icons=['house', 'kanban', 'bi bi-robot'],
+                         menu_icon="app-indicator", default_index=0,
+                         styles={
+        "container": {"padding": "4!important", "background-color": "#fafafa"},
+        "icon": {"color": "black", "font-size": "25px"},
+        "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "#fafafa"},
+        "nav-link-selected": {"background-color": "#08c7b4"},
+    }
+    )
+
+
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
 st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
 st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
