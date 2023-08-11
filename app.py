@@ -50,10 +50,9 @@ df_pc1_score = df["PC1_score"]
                             
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-st.sidebar.['Data Base', 'Formulation Recommendation', 'Formulation Customization']
-#option = st.sidebar.selectbox(
-#    'Menu',
-#     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
+option = st.sidebar.selectbox(
+    'Menu',
+     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
 
 
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
