@@ -39,7 +39,7 @@ pca = PCA(n_components=4)  # 주성분을 몇개로 할지 결정
 principalComponents = pca.fit_transform(x)
 principalDf = pd.DataFrame(data=principalComponents, index=df.index, columns=['pc1', 'pc2', 'pc3', 'pc4'])
 # 주성분으로 이루어진 데이터 프레임 구성
-pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_, index=['PC1', 'PC2', 'PC3', 'PC4'], columns=['Explained Variance Ratio'])
+pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_, index=['Principal Component 1', 'Principal Component 2', 'Principal Component 3', 'Principal Component 4'], columns=['Explained Variance Ratio'])
 st.write(pca_explained_variance_ratio)
 
 principalDf["Classification"] = df['Classification']
