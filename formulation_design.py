@@ -4,10 +4,6 @@ from sklearn.decomposition import PCA
 
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-option = st.sidebar.selectbox(
-    'Menu',
-    ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
-
 multi_select = st.multiselect(
     'Please select features in multi selectbox. Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
     ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH',
