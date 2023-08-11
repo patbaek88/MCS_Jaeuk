@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
 multi_select = st.multiselect(
-    'Please select features in multi selectbox. Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
+    '1. Please select features in multi selectbox. Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
     ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH',
      '6UYS', '6MPS', '6FF', '6AIF', 'WFA'],
     default=['SE', 'CBD', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA'])
@@ -71,7 +71,7 @@ st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class
 st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
 st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
 st.write(" ")
-st.write("Please Set Name and Content(%) of API and Excipients")
+st.write("2. Please Set Name and Content(%) of API and Excipients")
 API_name = st.selectbox(
     'Select API',
     ("CS-BT-077", "DIN-juyeol91-094", "21ET70-1", "GQ72-bckim-160-14", "GPR-LSE-144", "GPR-LSE-108",
