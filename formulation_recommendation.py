@@ -293,7 +293,7 @@ if st.button("Recommend"):
     st.write("Mixture MCS result = "+MCS_result)
     st.write("---------------------Recommended Formulation Detail---------------------")
     st.write("API name / PC1 score / content = "+API_name+" / "+API_PC1_score_1+" / "+API_content+" %")
-    st.write("Excipient1 name / PC1 score / content = "+Excipient1_name+" / "+Excipient1_PC1_score_1+" / "+Excipient1_content_1+" % ")
+    st.write("Excipient1 name / PC1 score / content = "<br>+Excipient1_name+" / "+Excipient1_PC1_score_1+" / "+Excipient1_content_1+" % ")
     st.write("Excipient2 name / PC1 score / content = "+Excipient2_name+" / "+Excipient2_PC1_score_1+" / "+Excipient2_content_1+" % ")
     st.write("Excipient3 name / PC1 score / content = "+Excipient3_name+" / "+Excipient3_PC1_score_1+" / "+Excipient3_content_1+" % ")
     st.write("Excipient4 name / PC1 score / content = "+Excipient4_name+" / "+Excipient4_PC1_score_1+" / "+Excipient4_content_1+" % ")
