@@ -1,6 +1,18 @@
 import pandas as pd
 import streamlit as st
 from sklearn.decomposition import PCA
+
+st.title('Manfacturing Classification System')  # 타이틀명 지정
+
+option = st.sidebar.selectbox(
+    'Menu',
+     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
+
+multi_select = st.multiselect('Please select somethings in multi selectbox!',
+                                ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA'])
+	
+st.write('You selected:', multi_select)
+
 # loading dataset
 filename = 'Excipients_APIs_DB_Feb2023.csv'
 
@@ -8,7 +20,8 @@ filename = 'Excipients_APIs_DB_Feb2023.csv'
 df = pd.read_csv(filename)
 df = df.set_index('Material')
 
-df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+#df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+df_filtered = df[multi_select]
 
 from sklearn.preprocessing import StandardScaler
 
@@ -48,16 +61,7 @@ critical_value_class4_1 = str(round(critical_value_class4, 3))
 
 df_pc1_score = df["PC1_score"]
                             
-st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-option = st.sidebar.selectbox(
-    'Menu',
-     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
-
-multi_select = st.multiselect('Please select somethings in multi selectbox!',
-                                ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA'])
-	
-st.write('You selected:', multi_select)
 
 
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
