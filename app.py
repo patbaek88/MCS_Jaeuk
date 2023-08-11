@@ -66,12 +66,12 @@ df_pc1_score = df["PC1_score"]
                             
 
 
-
+st.write(df_pc1_score)
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
 st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
 st.write("Class 3 : Wet Granulation,       PC1 score < " + critical_value_class4_1)
 st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1)
-st.write(df_pc1_score)
+
 
 API_name = st.selectbox(
     'Select API',
