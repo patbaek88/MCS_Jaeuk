@@ -17,8 +17,8 @@ y = df['Classification'].values  # 종속변인 추출
 
 x = StandardScaler().fit_transform(x)  # x객체에 x를 표준화한 데이터를 저장
 
-# features = ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'CEtap50', 'BDtap50', 'Carr Index', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA']
-features = ['SE', 'CBD', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA']
+# all features = ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'CEtap50', 'BDtap50', 'Carr Index', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA']
+features = df_filtered.columns
 z = pd.DataFrame(x, columns=features)
 
 pca = PCA(n_components=4)  # 주성분을 몇개로 할지 결정
