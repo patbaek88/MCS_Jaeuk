@@ -17,7 +17,7 @@ y = df['Classification'].values  # 종속변인 추출
 
 x = StandardScaler().fit_transform(x)  # x객체에 x를 표준화한 데이터를 저장
 
-# all features = ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'CEtap50', 'BDtap50', 'Carr Index', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA']
+# all features = ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA']
 features = df_filtered.columns
 z = pd.DataFrame(x, columns=features)
 
@@ -53,6 +53,11 @@ st.title('Manfacturing Classification System')  # 타이틀명 지정
 option = st.sidebar.selectbox(
     'Menu',
      ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
+
+multi_select = st.multiselect('Please select somethings in multi selectbox!',
+                                ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA'])
+	
+  st.write('You selected:', multi_select)
 
 
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
