@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.decomposition import PCA
 # loading dataset
-filename = 'Excipients_APIs_DB_2023_230217-1.csv'
+filename = 'Excipients_APIs_DB_Feb2023.csv'
 
 # creating data frame for pandas
 df = pd.read_csv(filename)
