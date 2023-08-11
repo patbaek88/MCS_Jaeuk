@@ -57,7 +57,7 @@ option = st.sidebar.selectbox(
 multi_select = st.multiselect('Please select somethings in multi selectbox!',
                                 ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF', 'WFA'])
 	
-  st.write('You selected:', multi_select)
+st.write('You selected:', multi_select)
 
 
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
