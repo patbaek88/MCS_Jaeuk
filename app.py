@@ -53,7 +53,7 @@ st.title('Manfacturing Classification System')  # 타이틀명 지정
 
 option = st.sidebar.selectbox(
     'Menu',
-     ('페이지1', '페이지2', '페이지3'))
+     ('Data Base', 'Formulation Recommendation', 'Formulation Customization'))
 
 
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
