@@ -10,5 +10,8 @@ st.write("")
 st.write('Design Your Formulation and Check Manufacturing Class')
 link2 = '[Formulation Design](http://mcs-jaeuk-design.streamlit.app)'
 st.markdown(link2, unsafe_allow_html=True)
-
-
+st.write("")
+st.write("")
+st.write('Current Data Base')
+df = pd.read_csv("./data/titanic.csv")
+st.write(df) 
