@@ -19,13 +19,13 @@ filename = 'Excipients_APIs_DB_Feb2023.csv'
 df = pd.read_csv(filename)
 df = df.set_index('Material')
 
-# df_filtered = df.drop(['Classification', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+# df_filtered = df.drop(['Function', 'Project','BFE', 'SI', 'FRI', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
 df_filtered = df[multi_select]
 
 from sklearn.preprocessing import StandardScaler
 
 x = df_filtered.values  # 독립변인들의 value값만 추출
-y = df['Classification'].values  # 종속변인 추출
+y = df['Function'].values  # 종속변인 추출
 
 x = StandardScaler().fit_transform(x)  # x객체에 x를 표준화한 데이터를 저장
 
@@ -43,8 +43,8 @@ pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_,
                                             columns=['Explained Variance Ratio'])
 st.write(pca_explained_variance_ratio)
 
-principalDf["Classification"] = df['Classification']
-principalDf_WG = principalDf[(principalDf['Classification'] == 'Filler_WG')]
+principalDf["Function"] = df['Function']
+principalDf_WG = principalDf[(principalDf['Function'] == 'Filler_WG')]
 
 critical_value_WG_min = principalDf_WG['pc1'].min()
 critical_value_WG_max = principalDf_WG['pc1'].max()
