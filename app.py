@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
@@ -15,4 +16,4 @@ st.write("")
 st.write('Current Data Base')
 database = 'Excipients_APIs_DB_Feb2023.csv'
 df = pd.read_csv(database)
-st.write(df) 
+st.write(df)
