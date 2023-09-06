@@ -15,5 +15,8 @@ st.write("")
 st.write("")
 st.write('Current Data Base')
 database = 'Excipients_APIs_DB_Feb2023.csv'
-df = pd.read_csv(database)
-st.write(df)
+df_database = pd.read_csv(database)
+st.write(df_database)
+ft4_features = 'FT4_features.csv'
+df_ft4_features = pd.read_csv(ft4_features)
+st.write(df_ft4_features)
