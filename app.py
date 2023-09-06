@@ -13,5 +13,6 @@ st.markdown(link2, unsafe_allow_html=True)
 st.write("")
 st.write("")
 st.write('Current Data Base')
-df = pd.read_csv("./data/titanic.csv")
+database = 'Excipients_APIs_DB_Feb2023.csv'
+df = pd.read_csv(database)
 st.write(df) 
