@@ -14,11 +14,17 @@ st.markdown(link2, unsafe_allow_html=True)
 st.write("")
 st.write("")
 
-list_of_names = ['FT4_DB_Feb2023','FT4_features']
-dataframes_list = []
-for i in range(len(list_of_names)):
-    temp_df = pd.read_csv(list_of_names[i]+".csv")
-    dataframes_list.append(temp_df)
+#list_of_names = ['FT4_DB_Feb2023','FT4_features']
+#dataframes_list = []
+#for i in range(len(list_of_names)):
+#    temp_df = pd.read_csv(list_of_names[i]+".csv")
+#    dataframes_list.append(temp_df)
+
+multiple_files = st.file_uploader('CSV',type="csv", accept_multiple_files=True)
+for file in multiple_files:
+	dataframe = pd.read_csv(file)
+	file.seek(0)
+	st.write(dataframe)
 
 #database = 'FT4_DB_Feb2023.csv'
 #df_database = pd.read_csv(database)
