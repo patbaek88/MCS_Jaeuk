@@ -25,6 +25,6 @@ for i in range(len(list_of_names)):
 #ft4_features = 'FT4_features.csv'
 #df_ft4_features = pd.read_csv(ft4_features)
 st.write('FT4 Data Base ('+database+')')
-st.write(dataframes_list[0])
+#st.write(dataframes_list[0])
 st.write('FT4 Features')
 #st.write(dataframes_list[1])
