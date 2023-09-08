@@ -3,7 +3,7 @@ import pandas as pd
 
 st.title('Manfacturing Classification System')  # 타이틀명 지정
 
-st.write('Formulation Recommendation based on API and its content(%)')
+st.write('Formulation Recommendation')
 link1 = '[Formulation Recommendation](http://mcs-jaeuk-recommendation.streamlit.app)'
 st.markdown(link1, unsafe_allow_html=True)
 st.write("")
