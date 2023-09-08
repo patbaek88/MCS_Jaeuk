@@ -12,6 +12,11 @@ multi_select = st.multiselect(
 
 st.write('You selected:', multi_select)
 
+st.write('FT4 Features')
+ft4_features = 'FT4_features.csv'
+df_ft4_features = pd.read_csv(ft4_features)
+st.write(df_ft4_features)
+
 # loading dataset
 filename = 'FT4_DB_Feb2023.csv'
 
