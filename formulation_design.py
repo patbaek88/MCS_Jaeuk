@@ -45,8 +45,7 @@ pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_,
                                             index=['Principal Component 1', 'Principal Component 2',
                                                    'Principal Component 3', 'Principal Component 4'],
                                             columns=['Explained Variance Ratio'])
-st.write("")
-st.write('PCA Analysis Based On Seleced Features')
+st.write('PCA Result Based On Seleced Features')
 st.write(pca_explained_variance_ratio)
 
 principalDf["Function"] = df['Function']
