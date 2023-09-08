@@ -15,9 +15,9 @@ st.write("")
 st.write("")
 database = 'FT4_DB_Feb2023.csv'
 df_database = pd.read_csv(database)
+ft4_features = 'FT4_features.csv'
+df_ft4_features = pd.read_csv(ft4_features)
 st.write('FT4 Data Base ('+database+')')
 st.write(df_database)
 st.write('FT4 Features')
-ft4_features = 'FT4_features.csv'
-df_ft4_features = pd.read_csv(ft4_features)
-st.write(df_ft4_features)
+#st.write(df_ft4_features)
