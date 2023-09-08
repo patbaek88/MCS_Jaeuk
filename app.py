@@ -30,7 +30,7 @@ for file in multiple_files:
 #df_database = pd.read_csv(database)
 #ft4_features = 'FT4_features.csv'
 #df_ft4_features = pd.read_csv(ft4_features)
-st.write('FT4 Data Base ('+database+')')
+#st.write('FT4 Data Base ('+database+')')
 #st.write(dataframes_list[0])
 st.write('FT4 Features')
 #st.write(dataframes_list[1])
