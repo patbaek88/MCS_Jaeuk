@@ -3,7 +3,7 @@ import streamlit as st
 from sklearn.decomposition import PCA
 
 st.title('Manufacturing Classification System')  # 타이틀명 지정
-st.write('1. Please Select FT4 Features For PCA In Multi Selectbox Below') 
+st.write('1. Please select FT4 features for PCA in the multi selectbox below') 
 multi_select = st.multiselect(
     'Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
     ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH',
@@ -11,7 +11,7 @@ multi_select = st.multiselect(
     default=['SE', 'CBD', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA'])
 #st.write('You selected:', multi_select)
 
-st.write('FT4 Features')
+st.write('FT4 features')
 ft4_features = 'FT4_features.csv'
 df_ft4_features = pd.read_csv(ft4_features)
 st.write(df_ft4_features)
@@ -45,7 +45,7 @@ pca_explained_variance_ratio = pd.DataFrame(data=pca.explained_variance_ratio_,
                                             index=['Principal Component 1', 'Principal Component 2',
                                                    'Principal Component 3', 'Principal Component 4'],
                                             columns=['Explained Variance Ratio'])
-st.write('PCA Result Based On Seleced Features')
+st.write('PCA result based on seleced features')
 st.write(pca_explained_variance_ratio)
 
 principalDf["Function"] = df['Function']
@@ -78,7 +78,7 @@ st.write("Class 4 : Other Technology,   PC1 score >= " + critical_value_class4_1
 st.write("")
 st.write("")
 st.write("")
-st.write("2. Please Enter Formulation Information Below")
+st.write("2. Please enter formulation information below")
 API_name = st.selectbox(
     'Select API',
     ("CS-BT-077", "DIN-juyeol91-094", "21ET70-1", "GQ72-bckim-160-14", "GPR-LSE-144", "GPR-LSE-108",
