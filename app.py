@@ -13,10 +13,9 @@ link2 = '[Formulation Design](http://mcs-jaeuk-design.streamlit.app)'
 st.markdown(link2, unsafe_allow_html=True)
 st.write("")
 st.write("")
-st.write('FT4 Data Base')
 database = 'FT4_DB_Feb2023.csv'
 df_database = pd.read_csv(database)
-st.write("filename = "+database)
+st.write('FT4 Data Base (filename:'+database+')')
 st.write(df_database)
 st.write('FT4 Features')
 ft4_features = 'FT4_features.csv'
