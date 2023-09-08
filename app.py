@@ -3,12 +3,12 @@ import pandas as pd
 
 st.title('Manufacturing Classification System')  # 타이틀명 지정
 st.write("")
-st.write("Formulation And Manufacturing Class Recommendation Based On API And Its Content(%)")
+st.write("Formulation and Manufacturing Class Recommendation Based on API and Its Content(%)")
 link1 = '[Formulation Recommendation](http://mcs-jaeuk-recommendation.streamlit.app)'
 st.markdown(link1, unsafe_allow_html=True)
 st.write("")
 st.write("")
-st.write("Manufacturing Class Recommendation For User-Designed Formulation")
+st.write("Manufacturing Class Recommendation for User-Designed Formulation")
 link2 = '[Formulation Design](http://mcs-jaeuk-design.streamlit.app)'
 st.markdown(link2, unsafe_allow_html=True)
 st.write("")
