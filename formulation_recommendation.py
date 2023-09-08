@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.decomposition import PCA
 
-st.title('Manfacturing Classification System')  # 타이틀명 지정
+st.title('Manufacturing Classification System')  # 타이틀명 지정
 
 # loading dataset
 filename = 'FT4_DB_Feb2023.csv'
