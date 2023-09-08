@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 from sklearn.decomposition import PCA
 
-st.title('Manfacturing Classification System')  # 타이틀명 지정
+st.title('Manufacturing Classification System')  # 타이틀명 지정
 
 multi_select = st.multiselect(
     '1. Please select features in multi selectbox. Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
