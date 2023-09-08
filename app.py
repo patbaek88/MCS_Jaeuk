@@ -17,7 +17,7 @@ st.write("")
 list_of_names = ['FT4_DB_Feb2023','FT4_features']
 dataframes_list = []
 for i in range(len(list_of_names)):
-    temp_df = pd.read_csv("./csv/"+list_of_names[i]+".csv")
+    temp_df = pd.read_csv(list_of_names[i]+".csv")
     dataframes_list.append(temp_df)
 
 #database = 'FT4_DB_Feb2023.csv'
