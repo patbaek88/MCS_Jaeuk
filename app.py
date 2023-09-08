@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-st.title('Manfacturing Classification System')  # 타이틀명 지정
-
+st.title('Manufacturing Classification System')  # 타이틀명 지정
+st.write("")
 link1 = '[Formulation Recommendation](http://mcs-jaeuk-recommendation.streamlit.app)'
 st.markdown(link1, unsafe_allow_html=True)
 st.write("")
