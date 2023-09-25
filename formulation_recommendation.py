@@ -224,7 +224,7 @@ if st.button("Recommend"):
         Excipient1_content_1 = str(Excipient1_content)
         Excipient2_name = "Lactose monohydrate (Tablettose 80)_1"
         Excipient2_PC1_score = df.loc[Excipient2_name]["PC1_score"]
-        Excipient2_PC1_score_1 = str(Excipient2_PC1_score)
+        Excipient2_PC1_score_1 = str(round(Excipient2_PC1_score, 3))
         Excipient2_content =  DC2_Excipient2_content_1
         Excipient2_content_1 = str(Excipient2_content)
         Excipient3_name = "Vivasol_1"
