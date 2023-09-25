@@ -85,95 +85,29 @@ API_name = st.selectbox('Select API', API_list)
 
 API_content = st.text_input('API_content (%)')
 
+Excipient_df = df[(df['Function']!='API')]
+Excipient_list = Excipient_df.index.to_list()
 Excipient_1_name = st.selectbox(
     'Select Excipient_1',
-    ("Lactose DCL-15 (Supertab 30GR)_1", "Lactose DCL-15 (Supertab 30GR)_2", "Lactose monohydrate (Supertab 30GR)_1",
-     "Lactose monohydrate (Supertab 30GR)_2", "Lactose #200", "Lactose monohydrate (Tablettose 80)_1",
-     "Lactose monohydrate (Tablettose 80)_2", "Lactose monohydrate (FLOWLAC 90)", "Lactose Anhydrous (Supertab 21AN)",
-     "Lactose Anhydrous (Supertab 22AN)", "Lactose Anhydrous (21AN)", "D-Mannitol", "Pearlitol 100 SD",
-     "Pearlitol 160 C", "Pearlitol 200 SD_1", "Pearlitol 200 SD_2", "Parteck Delta M", "Parteck M 100", "Vivapur 301",
-     "Vivapur 112", "Vivapur 302", "Vivapur 12_1", "Vivapur 12_2", "Vivapur 12_3", "Vivapur 200", "Heweten 101_1",
-     "Heweten 101_2", "Heweten 101_3", "Heweten 102_1", "Heweten 102_2", "Avicel PH-102", "Avicel PH-200", "DCP D/T_1",
-     "DCP D/T_2", "Starch 1500 (Partially pregelatinized maize starch)_1",
-     "Starch 1500 (Partially pregelatinized maize starch)_2", "Startab (Directly compressible starch)_1",
-     "Startab (Directly compressible starch)_2", "Starcap 1500",
-     "CELLACTOSE 80 (75% Lactose monohydrate+25% Cellulose powdered)", "Prosolv SMCC 50_1", "Prosolv SMCC 50_2",
-     "Prosolv SMCC HD90", "Prosolv Easytab SP LM", "Kollidon VA 64 (Copovidone)_1", "Kollidon VA 64 (Copovidone)_2",
-     "Kollidon 12 PF (Povidone)_1", "Kollidon 12 PF (Povidone)_2", "Kollidon 12 PF (Povidone)_3",
-     "Kollidon 30 (Povidone)", "Methocel E6 (Methocel E6 PREMIUM LV HPMC)",
-     "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_1", "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_2",
-     "Methocel K15M (Methocel E15 PREMIUM CR HPMC)", "HPMC E5LV (Hypromellose 2910)", "CMC Sodium_CMC 7L2P",
-     "CMC Sodium_CMC 7MF PH BET", "EXPLOSOL", "Kollidon CL (Crospovidone)", "Ac-Di-Sol SD-711_1", "Ac-Di-Sol SD-711_2",
-     "Vivasol_1", "Vivasol_2"))
+    Excipient_list)
 
 Excipient_1_content = st.text_input('Excipient_1_content (%)')
 
 Excipient_2_name = st.selectbox(
     'Select Excipient_2',
-    ("Lactose DCL-15 (Supertab 30GR)_1", "Lactose DCL-15 (Supertab 30GR)_2", "Lactose monohydrate (Supertab 30GR)_1",
-     "Lactose monohydrate (Supertab 30GR)_2", "Lactose #200", "Lactose monohydrate (Tablettose 80)_1",
-     "Lactose monohydrate (Tablettose 80)_2", "Lactose monohydrate (FLOWLAC 90)", "Lactose Anhydrous (Supertab 21AN)",
-     "Lactose Anhydrous (Supertab 22AN)", "Lactose Anhydrous (21AN)", "D-Mannitol", "Pearlitol 100 SD",
-     "Pearlitol 160 C", "Pearlitol 200 SD_1", "Pearlitol 200 SD_2", "Parteck Delta M", "Parteck M 100", "Vivapur 301",
-     "Vivapur 112", "Vivapur 302", "Vivapur 12_1", "Vivapur 12_2", "Vivapur 12_3", "Vivapur 200", "Heweten 101_1",
-     "Heweten 101_2", "Heweten 101_3", "Heweten 102_1", "Heweten 102_2", "Avicel PH-102", "Avicel PH-200", "DCP D/T_1",
-     "DCP D/T_2", "Starch 1500 (Partially pregelatinized maize starch)_1",
-     "Starch 1500 (Partially pregelatinized maize starch)_2", "Startab (Directly compressible starch)_1",
-     "Startab (Directly compressible starch)_2", "Starcap 1500",
-     "CELLACTOSE 80 (75% Lactose monohydrate+25% Cellulose powdered)", "Prosolv SMCC 50_1", "Prosolv SMCC 50_2",
-     "Prosolv SMCC HD90", "Prosolv Easytab SP LM", "Kollidon VA 64 (Copovidone)_1", "Kollidon VA 64 (Copovidone)_2",
-     "Kollidon 12 PF (Povidone)_1", "Kollidon 12 PF (Povidone)_2", "Kollidon 12 PF (Povidone)_3",
-     "Kollidon 30 (Povidone)", "Methocel E6 (Methocel E6 PREMIUM LV HPMC)",
-     "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_1", "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_2",
-     "Methocel K15M (Methocel E15 PREMIUM CR HPMC)", "HPMC E5LV (Hypromellose 2910)", "CMC Sodium_CMC 7L2P",
-     "CMC Sodium_CMC 7MF PH BET", "EXPLOSOL", "Kollidon CL (Crospovidone)", "Ac-Di-Sol SD-711_1", "Ac-Di-Sol SD-711_2",
-     "Vivasol_1", "Vivasol_2"))
+    Excipient_list)
 
 Excipient_2_content = st.text_input('Excipient_2_content (%)')
 
 Excipient_3_name = st.selectbox(
     'Select Excipient_3',
-    ("Lactose DCL-15 (Supertab 30GR)_1", "Lactose DCL-15 (Supertab 30GR)_2", "Lactose monohydrate (Supertab 30GR)_1",
-     "Lactose monohydrate (Supertab 30GR)_2", "Lactose #200", "Lactose monohydrate (Tablettose 80)_1",
-     "Lactose monohydrate (Tablettose 80)_2", "Lactose monohydrate (FLOWLAC 90)", "Lactose Anhydrous (Supertab 21AN)",
-     "Lactose Anhydrous (Supertab 22AN)", "Lactose Anhydrous (21AN)", "D-Mannitol", "Pearlitol 100 SD",
-     "Pearlitol 160 C", "Pearlitol 200 SD_1", "Pearlitol 200 SD_2", "Parteck Delta M", "Parteck M 100", "Vivapur 301",
-     "Vivapur 112", "Vivapur 302", "Vivapur 12_1", "Vivapur 12_2", "Vivapur 12_3", "Vivapur 200", "Heweten 101_1",
-     "Heweten 101_2", "Heweten 101_3", "Heweten 102_1", "Heweten 102_2", "Avicel PH-102", "Avicel PH-200", "DCP D/T_1",
-     "DCP D/T_2", "Starch 1500 (Partially pregelatinized maize starch)_1",
-     "Starch 1500 (Partially pregelatinized maize starch)_2", "Startab (Directly compressible starch)_1",
-     "Startab (Directly compressible starch)_2", "Starcap 1500",
-     "CELLACTOSE 80 (75% Lactose monohydrate+25% Cellulose powdered)", "Prosolv SMCC 50_1", "Prosolv SMCC 50_2",
-     "Prosolv SMCC HD90", "Prosolv Easytab SP LM", "Kollidon VA 64 (Copovidone)_1", "Kollidon VA 64 (Copovidone)_2",
-     "Kollidon 12 PF (Povidone)_1", "Kollidon 12 PF (Povidone)_2", "Kollidon 12 PF (Povidone)_3",
-     "Kollidon 30 (Povidone)", "Methocel E6 (Methocel E6 PREMIUM LV HPMC)",
-     "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_1", "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_2",
-     "Methocel K15M (Methocel E15 PREMIUM CR HPMC)", "HPMC E5LV (Hypromellose 2910)", "CMC Sodium_CMC 7L2P",
-     "CMC Sodium_CMC 7MF PH BET", "EXPLOSOL", "Kollidon CL (Crospovidone)", "Ac-Di-Sol SD-711_1", "Ac-Di-Sol SD-711_2",
-     "Vivasol_1", "Vivasol_2"))
+    Excipient_list)
 
 Excipient_3_content = st.text_input('Excipient_3_content (%)')
 
 Excipient_4_name = st.selectbox(
     'Select Excipient_4',
-    ("Lactose DCL-15 (Supertab 30GR)_1", "Lactose DCL-15 (Supertab 30GR)_2", "Lactose monohydrate (Supertab 30GR)_1",
-     "Lactose monohydrate (Supertab 30GR)_2", "Lactose #200", "Lactose monohydrate (Tablettose 80)_1",
-     "Lactose monohydrate (Tablettose 80)_2", "Lactose monohydrate (FLOWLAC 90)", "Lactose Anhydrous (Supertab 21AN)",
-     "Lactose Anhydrous (Supertab 22AN)", "Lactose Anhydrous (21AN)", "D-Mannitol", "Pearlitol 100 SD",
-     "Pearlitol 160 C", "Pearlitol 200 SD_1", "Pearlitol 200 SD_2", "Parteck Delta M", "Parteck M 100", "Vivapur 301",
-     "Vivapur 112", "Vivapur 302", "Vivapur 12_1", "Vivapur 12_2", "Vivapur 12_3", "Vivapur 200", "Heweten 101_1",
-     "Heweten 101_2", "Heweten 101_3", "Heweten 102_1", "Heweten 102_2", "Avicel PH-102", "Avicel PH-200", "DCP D/T_1",
-     "DCP D/T_2", "Starch 1500 (Partially pregelatinized maize starch)_1",
-     "Starch 1500 (Partially pregelatinized maize starch)_2", "Startab (Directly compressible starch)_1",
-     "Startab (Directly compressible starch)_2", "Starcap 1500",
-     "CELLACTOSE 80 (75% Lactose monohydrate+25% Cellulose powdered)", "Prosolv SMCC 50_1", "Prosolv SMCC 50_2",
-     "Prosolv SMCC HD90", "Prosolv Easytab SP LM", "Kollidon VA 64 (Copovidone)_1", "Kollidon VA 64 (Copovidone)_2",
-     "Kollidon 12 PF (Povidone)_1", "Kollidon 12 PF (Povidone)_2", "Kollidon 12 PF (Povidone)_3",
-     "Kollidon 30 (Povidone)", "Methocel E6 (Methocel E6 PREMIUM LV HPMC)",
-     "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_1", "Methocel E15 (Methocel E15 PREMIUM LV HPMC)_2",
-     "Methocel K15M (Methocel E15 PREMIUM CR HPMC)", "HPMC E5LV (Hypromellose 2910)", "CMC Sodium_CMC 7L2P",
-     "CMC Sodium_CMC 7MF PH BET", "EXPLOSOL", "Kollidon CL (Crospovidone)", "Ac-Di-Sol SD-711_1", "Ac-Di-Sol SD-711_2",
-     "Vivasol_1", "Vivasol_2"))
+    Excipient_list)
 
 Excipient_4_content = st.text_input('Excipient_4_content (%)')
 
