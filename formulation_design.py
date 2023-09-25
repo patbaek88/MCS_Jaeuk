@@ -81,9 +81,7 @@ st.write("")
 st.write("2. Please enter formulation information below")
 API_df = df[(df['Function']=='API')]
 API_list = API_df.index.to_list()
-API_name = st.selectbox(
-    'Select API',
-    API_list)
+API_name = st.selectbox('Select API', API_list)
 
 API_content = st.text_input('API_content (%)')
 
