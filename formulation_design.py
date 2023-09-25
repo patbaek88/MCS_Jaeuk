@@ -68,8 +68,7 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-df_pc1_score = df["PC1_score"]
-df_pc1_score['Function'] = df["Function"]
+df_pc1_score = pd.DataFrame(data=df, index=df.index, columns=['Function','PC1_score'])
 
 st.write(df_pc1_score)
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
