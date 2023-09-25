@@ -5,7 +5,7 @@ from sklearn.decomposition import PCA
 st.title('Manufacturing Classification System')  # 타이틀명 지정
 
 # loading dataset
-filename = 'FT4_DB_Feb2023.csv'
+filename = 'FT4_DB_Sep2023.csv'
 
 # creating data frame for pandas
 df = pd.read_csv(filename)
@@ -49,19 +49,11 @@ critical_value_class2_1 = str(round(critical_value_class2, 3))
 critical_value_class3_1 = str(round(critical_value_class3, 3))
 critical_value_class4_1 = str(round(critical_value_class4, 3))
 
-
+API_df = df[(df['Function']=='API')]
+API_list = API_df.index.to_list()
 API_name = st.selectbox(
     'Select API',
-    ("CS-BT-077", "DIN-juyeol91-094", "21ET70-1", "GQ72-bckim-160-14", "GPR-LSE-144", "GPR-LSE-108",
-     "22GQ72-1", "Gemif_B200519031", "Gemif_B210520041", "Gemig_DPS21010", "Gemig_A211206027",
-     "Gemig_A211227003", "Gemig_B201217124", "Gemig_B201217125", "Gemig_B210112096", "Gemig_A211220029",
-     "Gemig_A211217014", "Gemig_A211222018", "Gemig_B201217128", "Gemig_A211223004", "Ler_Y210402006",
-     "Ler_Y200226018", "Ler_Y201124042", "Ler_A210729008", "Ler_A210924002", "MCR-jinokham-081", "19MC72-1",
-     "Met_Y201109028", "Met_Y201109026", "Met_Y201109027", "Met_A211109009", "Met_Y201127008",
-     "Met_A211204008", "Met_Y201127011", "Met_Y201127010", "Met_Y201127004", "Rosu_A211027004",
-     "Rosu_A210826001", "TTB-jungmins87-022_formA", "TT-01025-CL", "21NT70-1_formB", "Val_B201013040",
-     "Val_B201217126", "Val_B201013041", "Val_B201013042", "Val_A211216009", "11GD70-1", "GDB20002",
-     "20GD70-1", "GDB2003", "GDB20001"))
+    API_list)
 
 API_content = st.text_input('API_content (%)')
 
