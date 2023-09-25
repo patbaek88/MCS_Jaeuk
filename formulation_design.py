@@ -5,10 +5,10 @@ from sklearn.decomposition import PCA
 st.title('Manufacturing Classification System')  # 타이틀명 지정
 st.write('1. Please select FT4 features for PCA in the multi selectbox below') 
 multi_select = st.multiselect(
-    'Recommendation: SE, CBD, AE, CPS, PD, 9UYS, 9FF, WFA',
+    'Recommendation: SE, AE, CPS, PD, 9UYS, 9FF, WFA',
     ['BFE', 'SI', 'FRI', 'SE', 'CBD', 'AE', 'AR', 'NAS', 'CPS', 'PD', '9COH', '9UYS', '9MPS', '9FF', '9AIF', '6COH',
      '6UYS', '6MPS', '6FF', '6AIF', 'WFA'],
-    default=['SE', 'CBD', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA'])
+    default=['SE', 'AE', 'CPS', 'PD', '9UYS', '9FF', 'WFA'])
 #st.write('You selected:', multi_select)
 
 st.write('FT4 features')
