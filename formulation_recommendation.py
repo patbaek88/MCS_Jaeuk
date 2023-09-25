@@ -11,7 +11,8 @@ filename = 'FT4_DB_Sep2023.csv'
 df = pd.read_csv(filename)
 df = df.set_index('Material')
 
-df_filtered = df.drop(['Function', 'Project','BFE', 'SI', 'FRI', 'CBD', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+#df_filtered = df.drop(['Function', 'Project','BFE', 'SI', 'FRI', 'CBD', 'AR', 'NAS', '9COH', '9MPS', '9AIF', '6COH', '6UYS', '6MPS', '6FF', '6AIF'], axis=1)
+df_filtered = df.drop(['Function', 'Project'], axis=1)
 
 from sklearn.preprocessing import StandardScaler
 
