@@ -86,13 +86,13 @@ if st.button("Recommend"):
     DC2_Excipient1_name = "Prosolv SMCC HD90"
     DC2_Excipient1_PC1_score = df.loc[DC2_Excipient1_name]["PC1_score"]
     DC2_Excipient1_PC1_score_1 = str(round(DC2_Excipient1_PC1_score, 3))
-    DC2_Excipient1_content = 100 - 20 - 3 - 1 - API_content_f
+    DC2_Excipient1_content = (100 - 3 - 1 - API_content_f)*2/3
     DC2_Excipient1_content_1 = str(DC2_Excipient1_content)
 
     DC2_Excipient2_name = "Lactose monohydrate (Tablettose 80)_1"
     DC2_Excipient2_PC1_score = df.loc[DC2_Excipient2_name]["PC1_score"]
     DC2_Excipient2_PC1_score_1 = str(round(DC2_Excipient2_PC1_score, 3))
-    DC2_Excipient2_content = 20
+    DC2_Excipient2_content = (100 - 3 - 1 - API_content_f)*1/3
     DC2_Excipient2_content_1 = str(DC2_Excipient2_content)
 
     DC2_Excipient3_name = "Vivasol_1"
