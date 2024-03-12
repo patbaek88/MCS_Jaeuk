@@ -69,6 +69,7 @@ critical_value_class4_1 = str(round(critical_value_class4, 3))
 
 df_pc1_score = pd.DataFrame(data=df, index=df.index, columns=['Function','PC1_score'])
 
+st.write(principalDf)                                                                  
 st.write(df_pc1_score)
 st.write("Class 1 : Direct Compression,   PC1 score < " + critical_value_class1_1)
 st.write("Class 2 : Dry Granulation,        PC1 score < " + critical_value_class3_1)
